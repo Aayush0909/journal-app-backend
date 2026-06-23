@@ -20,10 +20,6 @@ public class JwtUtil {
     @Value("${spring.data.mongodb.uri}")
     private String mongoUri;
 
-    @PostConstruct
-    public void test() {
-        System.out.println("URI = " + mongoUri);
-    }
 
     private SecretKey getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
